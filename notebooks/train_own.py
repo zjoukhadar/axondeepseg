@@ -35,8 +35,8 @@ path_patched_data_train = data_patched_path / 'Train'
 path_raw_data_validation = data_split_path / 'Validation'
 path_patched_data_validation = data_patched_path / 'Validation'
 
-patch_size = 1250
-general_pixel_size = 0.0119
+patch_size = 512
+general_pixel_size = 0.0476
 
 # Split the *Train* dataset into patches
 raw_img_to_patches(path_raw_data_train, path_patched_data_train, thresh_indices = [0, 0.2, 0.8], patch_size=patch_size, resampling_resolution=general_pixel_size)

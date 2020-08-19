@@ -39,7 +39,7 @@ def raw_img_to_patches(path_raw_data, path_patched_data, thresh_indices = [0, 0.
     for img_folder in tqdm(img_folder_names):
         path_img_folder = path_raw_data / img_folder
         if path_img_folder.is_dir():
-
+            print(str(path_img_folder))
             # We are now in the image folder.
             file = open(path_img_folder / 'pixel_size_in_micrometer.txt', 'r')
             pixel_size = float(file.read())
@@ -70,6 +70,9 @@ def raw_img_to_patches(path_raw_data, path_patched_data, thresh_indices = [0, 0.
                 path_patched_folder.mkdir(parents=True)
 
             for j, patch in enumerate(patches):
+                if (np.nanmax(patch[0]) == np.nanmin(patch[0]) ):
+                    print("not saving an image " + 'image_%s.png'%j)
+                    continue
                 ads.imwrite(path_patched_folder.joinpath('image_%s.png'%j), patch[0])
                 ads.imwrite(path_patched_folder.joinpath('mask_%s.png'%j), patch[1])
 

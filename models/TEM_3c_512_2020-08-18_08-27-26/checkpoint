@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/ubuntu/code/libs/axondeepseg/notebooks/../models/TEM_3c_512_2020-08-18_08-27-26/model.ckpt"
+all_model_checkpoint_paths: "/home/ubuntu/code/libs/axondeepseg/notebooks/../models/TEM_3c_512_2020-08-18_08-27-26/model.ckpt"

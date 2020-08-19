@@ -13,6 +13,7 @@ def extract_patch(patch, size):
         mask = patch[1]
         if len(patch) == 3:
             weights = patch[2]
+        print("image size: "+ str(img.shape)+", patch size: "+str(size))
     except:
         raise ValueError('\nError: First argument of extract_patch must be a list of 2 or 3 ndarrays: [image, mask, (weights)]')
 
